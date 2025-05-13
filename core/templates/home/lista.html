@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/home/lista.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Itens Cadastrados</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1><i class="fa-solid fa-boxes-stacked"></i> Itens Cadastrados</h1>
+
+      <a href="{% url 'register_item' %}" class="add-button">
+        <i class="fa-solid fa-plus"></i> Cadastrar Novo Item
+      </a>
+
+      {% for item in itens %}
+      <div class="item-container">
+        <p>
+          <i class="fa-solid fa-tag"></i> <strong>Nome:</strong> {{ item.name }}
+        </p>
+        <p>
+          <i class="fa-solid fa-money-bill-wave"></i> <strong>Preço:</strong> R$
+          {{ item.price }}
+        </p>
+        <p>
+          <i class="fa-solid fa-cubes-stacked"></i>
+          <strong>Quantidade:</strong> {{ item.quantity }}
+        </p>
+        <p>
+          <i class="fa-solid fa-location-dot"></i>
+          <strong>Localização:</strong> {{ item.location }}
+        </p>
+        <p>
+          <i class="fa-solid fa-barcode"></i> <strong>Código:</strong> 
+          {{item.code}}
+        </p>
+        <p>
+          <i class="fa-solid fa-align-left"></i> <strong>Descrição:</strong> 
+          {{item.description}}
+        </p>
+
+        {% if item.image %}
+        <div class="image-box">
+          <img src="{{ item.image.url }}" alt="Imagem do item" />
+        </div>
+        {% endif %}
+
+        <form action="{% url 'deletar_item' item.id %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="delete-button">
+            <i class="fa-solid fa-trash-can"></i> Deletar
+          </button>
+        </form>
+      </div>
+      {% empty %}
+      <p class="empty-message">Nenhum item cadastrado ainda!</p>
+      {% endfor %}
+    </div>
+  </body>
+</html>

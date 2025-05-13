@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/login/login.css' %}?v=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="login-container">
+      <h2><i class="fa-solid fa-heart"></i> Bem-vindo de Volta!</h2>
+      <form method="post" class="login-form">
+        {% csrf_token %}
+
+        <div class="input-group">
+          <label for="id_username">
+            <i class="fa-solid fa-user"></i> Usuário:
+          </label>
+          <input
+            type="text"
+            name="username"
+            id="id_username"
+            required
+            placeholder="Digite seu usuário"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="id_password">
+            <i class="fa-solid fa-lock"></i> Senha:
+          </label>
+          <input
+            type="password"
+            name="password"
+            id="id_password"
+            required
+            placeholder="Digite sua senha"
+          />
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <i class="fa-solid fa-right-to-bracket"></i> Entrar
+        </button>
+      </form>
+
+      <div class="register-link">
+        <p>
+          Ainda não tem uma conta?
+          <a href="{% url 'register' %}">
+            <i class="fa-solid fa-user-plus"></i> Cadastre-se aqui
+          </a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

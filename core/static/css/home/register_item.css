@@ -1,0 +1,114 @@
+/* Reset e fonte suave */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background-color: #fef6fb;
+  color: #5a5a5a;
+  padding: 40px 20px;
+}
+
+/* Container fofo */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff0f6;
+  border: 2px dashed #ffb6c1;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255, 182, 193, 0.3);
+}
+
+/* Título central e delicado */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ff69b4;
+  font-size: 26px;
+}
+
+/* Estilo dos campos */
+form p {
+  margin-bottom: 15px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #d63384;
+  font-size: 14px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="file"],
+form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 13px;
+  border: 1px solid #ffc0cb;
+  border-radius: 10px;
+  background-color: #fff5f8;
+  transition: border-color 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #ff69b4;
+  outline: none;
+}
+
+/* Botão com vibe de botão de docinho */
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff85c1;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #ff61a6;
+}
+
+/* Link estilizado */
+a {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #d63384;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Ícones embutidos */
+input[type="text"]::placeholder,
+input[type="number"]::placeholder,
+textarea::placeholder {
+  font-style: italic;
+  color: #b883a6;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label i {
+  margin-right: 8px;
+  color: #ff69b4;
+}

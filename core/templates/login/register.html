@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/login/register.css' %}?v=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Cadastro</title>
+  </head>
+  <body>
+    <div class="register-container">
+      <h2><i class="fa-solid fa-user-plus"></i> Crie sua Conta</h2>
+
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="input-group">
+          <label for="id_username">
+            <i class="fa-solid fa-user"></i> Usuário:
+          </label>
+          <input
+            type="text"
+            name="username"
+            id="id_username"
+            required
+            placeholder="Escolha seu nome de usuário"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="id_password1">
+            <i class="fa-solid fa-lock"></i> Senha:
+          </label>
+          <input
+            type="password"
+            name="password1"
+            id="id_password1"
+            required
+            placeholder="Crie uma senha forte"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="id_password2">
+            <i class="fa-solid fa-lock"></i> Confirme a Senha:
+          </label>
+          <input
+            type="password"
+            name="password2"
+            id="id_password2"
+            required
+            placeholder="Repita a senha"
+          />
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <i class="fa-solid fa-check"></i> Cadastrar
+        </button>
+      </form>
+
+      <div class="login-link">
+        <p>
+          Já tem uma conta?
+          <a href="{% url 'login' %}">
+            <i class="fa-solid fa-right-to-bracket"></i> Faça login
+          </a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

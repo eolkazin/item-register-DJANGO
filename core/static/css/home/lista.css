@@ -1,0 +1,110 @@
+/* Reset e fonte fofinha */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background-color: #fff0f6;
+  padding: 40px 20px;
+  color: #5a5a5a;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  color: #ff69b4;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+/* Botão de adicionar */
+.add-button {
+  display: inline-block;
+  background-color: #ff85c1;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 30px;
+  transition: background-color 0.3s;
+}
+
+.add-button i {
+  margin-right: 8px;
+}
+
+.add-button:hover {
+  background-color: #ff61a6;
+}
+
+/* Item individual */
+.item-container {
+  background-color: #fff5f8;
+  border: 2px dashed #ffc0cb;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.3);
+}
+
+.item-container p {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.item-container i {
+  color: #ff69b4;
+  margin-right: 6px;
+}
+
+/* Imagem */
+.image-box {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.image-box img {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 12px;
+  border: 2px solid #ffc0cb;
+}
+
+/* Botão deletar */
+.delete-button {
+  background-color: #ff6b81;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.delete-button i {
+  margin-right: 5px;
+}
+
+.delete-button:hover {
+  background-color: #e2556d;
+}
+
+/* Caso não haja itens */
+.empty-message {
+  text-align: center;
+  font-style: italic;
+  color: #999;
+  margin-top: 50px;
+}

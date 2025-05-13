@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/home/register_item.css' %}?v=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Cadastro de Item</title>
+  </head>
+  <body>
+    <h1><i class="fa-solid fa-box-open"></i> Cadastro de Item</h1>
+
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <div class="input-group">
+        <label for="id_name"><i class="fa-solid fa-tag"></i> Nome</label>
+        {{ form.name }}
+      </div>
+
+      <div class="input-group">
+        <label for="id_price"
+          ><i class="fa-solid fa-money-bill-wave"></i> Preço</label
+        >
+        {{ form.price }}
+      </div>
+
+      <div class="input-group">
+        <label for="id_quantity"
+          ><i class="fa-solid fa-sort-numeric-up"></i> Quantidade</label
+        >
+        {{ form.quantity }}
+      </div>
+
+      <div class="input-group">
+        <label for="id_location"
+          ><i class="fa-solid fa-location-dot"></i> Localização</label
+        >
+        {{ form.location }}
+      </div>
+
+      <div class="input-group">
+        <label for="id_code"><i class="fa-solid fa-barcode"></i> Código</label>
+        {{ form.code }}
+      </div>
+
+      <div class="input-group">
+        <label for="id_description"
+          ><i class="fa-solid fa-pencil-alt"></i> Descrição</label
+        >
+        {{ form.description }}
+      </div>
+
+      <div class="input-group">
+        <label for="id_image"><i class="fa-solid fa-image"></i> Imagem</label>
+        {{ form.image }}
+      </div>
+
+      <button type="submit">
+        <i class="fa-solid fa-floppy-disk"></i> Salvar
+      </button>
+    </form>
+
+    <a href="{% url 'lista' %}"
+      ><i class="fa-solid fa-list"></i> Ver Lista de Itens</a
+    >
+  </body>
+</html>
