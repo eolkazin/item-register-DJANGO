@@ -60,9 +60,13 @@ def register_item_view(request):
     return render(request, 'home/register_item.html', {'form': form})
 
 def lista_view(request):
-    # lógica para exibir a lista de itens
+    user_id = request.session.get('user_id')
+    user = None
+    if user_id:
+        user = Login_user.objects.filter(id=user_id).first()
+    
     itens = Item.objects.all()
-    return render(request, 'home/lista.html', {'itens': itens})
+    return render(request, 'home/lista.html', {'itens': itens, 'usuario': user})
 
 
 
@@ -70,3 +74,8 @@ def deletar_item(request, item_id):
     item = get_object_or_404(Item, id=item_id)
     item.delete()
     return redirect('lista')  
+
+
+
+def favoritar_item(request):
+    return render(request, 'home/fav.html')

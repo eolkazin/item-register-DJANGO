@@ -12,6 +12,9 @@ urlpatterns = [
     path('home/lista/', views.lista_view, name='lista'),
     path('home/register_item/', views.register_item_view, name='register_item'),
     path('deletar/<int:item_id>/', views.deletar_item, name='deletar_item'),
+    path('home/fav', views.lista_view, name='fav'),
+
+
 
 ]
 

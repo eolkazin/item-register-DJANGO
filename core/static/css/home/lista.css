@@ -79,6 +79,69 @@ h1 {
   border: 2px solid #ffc0cb;
 }
 
+/* Saudação fixa no canto */
+.user-greeting {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #ffe0ec;
+  padding: 10px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.2);
+  color: #ff69b4;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+  border: 2px solid #ffc0cb;
+}
+
+.user-greeting i {
+  color: #ff69b4;
+  font-size: 18px;
+}
+
+/* Botão de favoritar item */
+.fav-item-button {
+  background-color: #ffb6c1;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 8px rgba(255, 105, 180, 0.2);
+}
+
+.fav-item-button i {
+  color: white;
+  font-size: 16px;
+}
+
+.fav-item-button:hover {
+  background-color: #ff69b4;
+  transform: scale(1.05);
+}/* 
+ * Styles for user interaction buttons and empty state in the item list view.
+ * 
+ * Includes CSS for:
+ * - Favorite item button with hover effects
+ * - Delete button with hover state
+ * - Empty list message styling
+ * 
+ * Color scheme uses soft pink and pastel tones for a friendly UI.
+ */
+
+
 /* Botão deletar */
 .delete-button {
   background-color: #ff6b81;
